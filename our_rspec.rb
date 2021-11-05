@@ -4,12 +4,9 @@ def emphasize(value)
   "#{value.upcase}!"
 end
 
-def expect(output)
-  ExpectedTarget.new(output)
+Rspec.describe 'emphasizing text' do
+  it 'makes the text uppercase and addds exclamation point' do 
+  expect(emphasize('hello')).to(eq('HELLO!'))
+  end
 end
 
-def eq(expected_output)
-  expected_output
-end
-
-expect(emphasize('hello')).to(eq('HELLO!'))
